@@ -8,7 +8,7 @@ Konfigurasi dan konstanta global untuk game PhaseShift.
 SCREEN_WIDTH = 1280
 SCREEN_HEIGHT = 720
 FPS = 60
-TITLE = "PhaseShift: Thermodynamic Duo"
+TITLE = "Thermodynamic Duo"
 
 # Ukuran Tile Grid
 TILE_SIZE = 40
