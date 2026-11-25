@@ -21,20 +21,28 @@ Game platformer berbasis fisika termal dinamis (*Thermodynamic Flux*) yang dibua
 
 ## Kontrol game
 
-Game ini mendukung mode local co-op maupun single player.
+Game ini mendukung mode local co-op dan solo swap.
 
 Player 1 (Ignis, elemen api):
 * `A` / `D`: Bergerak ke kiri atau kanan
 * `W` / `Space`: Melompat
-* `Left Shift`: Heat Dash untuk mencairkan es dan memanaskan air menjadi geyser
+* `Left Shift`: Dash
+* `S`: Heat Stance (mencairkan es, melelehkan tembok penghalang, dan mengisi altar merah saat berada di darat)
 
 Player 2 (Cryo, elemen es):
 * `Panah Kiri` / `Panah Kanan`: Bergerak ke kiri atau kanan
 * `Panah Atas`: Melompat
-* `Right Control`: Frost Glaze untuk membekukan air menjadi es dan mendinginkan lava
+* `Right Control` / `Right Shift`: Dash
+* `Panah Bawah`: Frost Cast (membekukan air menjadi es dan mengisi altar biru saat berada di darat)
+
+Kontrol umum dan mode solo:
+* `M`: Beralih antara mode Co-op Lokal dan Solo Swap
+* `Tab`: Berganti karakter aktif saat berada di mode Solo Swap (tombol gerak, lompat, dash, dan skill mengendalikan karakter yang sedang aktif)
+* `R`: Reset level
+* `Esc`: Keluar dari game
 
 Sinergi spesial (Thermal Shockwave):
-* Lakukan dash ke arah satu sama lain saat berada di udara untuk memicu ledakan termal yang bisa memecahkan rintangan.
+* Lakukan dash dengan Ignis dan Cryo ke arah satu sama lain hingga bertabrakan untuk memicu pantulan termal.
 
 ## Struktur direktori
 
