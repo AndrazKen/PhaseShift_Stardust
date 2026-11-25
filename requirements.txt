@@ -1,0 +1,6 @@
+# Core game dependency (provides `pygame` module, compatible with Python 3.13+)
+pygame-ce>=2.5.8
+
+# Asset extraction utility (assets/extract_sprites.py)
+pillow>=11.2.1
+numpy>=2.2.0
