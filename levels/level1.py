@@ -39,7 +39,7 @@ LEVEL_1_MAP = [
     "#   #####        =====         #", # 10 (Roof col 4-8; Step 1 col 17-21)
     "#   #####                      #", # 11
     "#12     %                 ==== #", # 12 (Spawn aman cols 1-2; Barrier %, Step 0 col 26-29)
-    "#       %             R    B   #", # 13 (LANTAI DATAR! Jalan langsung ke R & B!)
+    "#                     R    B   #", # 13 (LANTAI DATAR! Jalan langsung ke R & B!)
     "###~~~~####################### #", # 14 (Floor Y=560)
     "###~~~~#                     # #", # 15
     "################################", # 16
