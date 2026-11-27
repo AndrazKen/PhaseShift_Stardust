@@ -6,11 +6,11 @@ Game platformer berbasis fisika termal dinamis (*Thermodynamic Flux*) yang dibua
 
 ## Kelompok Stardust
 Project Kelompok Stardust, dengan anggota:
-   1.Muhammad Andraz Kenang Romero (2632070)
-   2.Ica Puspita
-   3.Hit Samuel Manurung (2632015)
-   4.Arga (2632010)
-   5.Riko (2632058)
+1. Muhammad Andraz Kenang Romero (2632070)
+2. Ica Puspita
+3. Hit Samuel Manurung (2632015)
+4. Arga (2632010)
+5. Riko (2632058)
 
 ## Cara menjalankan
 
