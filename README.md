@@ -1,3 +1,5 @@
+# BAGUS TERLAMBAT 4 HARI
+
 # PhaseShift (Thermodynamic Duo Platformer)
 
 Game platformer berbasis fisika termal dinamis (*Thermodynamic Flux*) yang dibuat menggunakan Python dan Pygame tanpa game engine.
