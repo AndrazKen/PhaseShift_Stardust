@@ -83,23 +83,19 @@ class InputHandler:
             if keys[pygame.K_LEFT]: cryo.move -= 1.0
             if keys[pygame.K_RIGHT]: cryo.move += 1.0
             if keys[pygame.K_DOWN]: cryo.action_pressed = True
-        else:
-            # Mode Solo Swap
-            shared_move = 0.0
-            if keys[pygame.K_a] or keys[pygame.K_LEFT]: shared_move -= 1.0
-            if keys[pygame.K_d] or keys[pygame.K_RIGHT]: shared_move += 1.0
+            return ignis, cryo
 
-            if active_solo_char == CharacterType.IGNIS:
-                ignis.move = shared_move
-                if keys[pygame.K_s]: ignis.action_pressed = True
-            else:
-                cryo.move = shared_move
-                if keys[pygame.K_DOWN] or keys[pygame.K_s]: cryo.action_pressed = True
-                if ignis.jump_pressed: cryo.jump_pressed = True
-                if ignis.jump_released: cryo.jump_released = True
-                if ignis.dash_pressed: cryo.dash_pressed = True
-                ignis.jump_pressed = False
-                ignis.jump_released = False
-                ignis.dash_pressed = False
+        # Mode Solo Swap: arahkan semua kontrol hanya ke karakter aktif
+        active = ActionState()
+        if keys[pygame.K_a] or keys[pygame.K_LEFT]: active.move -= 1.0
+        if keys[pygame.K_d] or keys[pygame.K_RIGHT]: active.move += 1.0
+        if keys[pygame.K_s] or keys[pygame.K_DOWN]: active.action_pressed = True
 
-        return ignis, cryo
+        active.jump_pressed = ignis.jump_pressed or cryo.jump_pressed
+        active.jump_released = ignis.jump_released or cryo.jump_released
+        active.dash_pressed = ignis.dash_pressed or cryo.dash_pressed
+        active.action_pressed = active.action_pressed or ignis.action_pressed or cryo.action_pressed
+
+        if active_solo_char == CharacterType.IGNIS:
+            return active, ActionState()
+        return ActionState(), active
