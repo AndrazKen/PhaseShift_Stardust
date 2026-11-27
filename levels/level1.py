@@ -20,7 +20,7 @@ from settings import (
 from levels.thermal_system import WaterTile, FrozenBarrier, ThermalCrucible
 
 # Peta Level 1 (32 x 18):
-# ~ : Air (Danau 5 tile: cols 1-5)
+# ~ : Air (Danau 4 tile: cols 3-6)
 # % : Tembok Sulur Beku (col 8, di bawah atap batu cols 4-8)
 # R, B : Altar Termal (cols 22, 27) -> LANTAI DATAR TERBUKA!
 # = : Platform One-Way (Bisa ditembus dari bawah, mendarat di atasnya)
@@ -38,10 +38,10 @@ LEVEL_1_MAP = [
     "#                              #", # 9
     "#   #####        =====         #", # 10 (Roof col 4-8; Step 1 col 17-21)
     "#   #####                      #", # 11
-    "# 1 2   %                 ==== #", # 12 (Barrier %, Step 0 col 26-29)
+    "#12     %                 ==== #", # 12 (Spawn aman cols 1-2; Barrier %, Step 0 col 26-29)
     "#       %             R    B   #", # 13 (LANTAI DATAR! Jalan langsung ke R & B!)
-    "#~~~~~######################## #", # 14 (Floor Y=560)
-    "#~~~~~#                      # #", # 15
+    "###~~~~####################### #", # 14 (Floor Y=560)
+    "###~~~~#                     # #", # 15
     "################################", # 16
     "################################", # 17
 ]
