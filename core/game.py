@@ -226,7 +226,8 @@ class Game:
                     else CharacterType.IGNIS
                 )
 
-            self.update(dt, ignis_cmd, cryo_cmd)
+            if not self.level.level_completed:
+                self.update(dt, ignis_cmd, cryo_cmd)
             self.render()
 
         pygame.quit()
