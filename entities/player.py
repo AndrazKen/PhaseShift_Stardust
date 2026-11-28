@@ -58,7 +58,8 @@ class Player:
 
     def load_sprites(self):
         """Memuat sprite pixel-art transparan dan mengubah ukurannya sesuai proporsi."""
-        base_dir = f"C:/PhaseShift/assets/sprites/{self.char_type}"
+        project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        base_dir = os.path.join(project_root, "assets", "sprites", self.char_type)
         action_name = "heat_stance" if self.char_type == CharacterType.IGNIS else "frost_cast"
         
         sprite_files = {
