@@ -55,6 +55,16 @@ class Game:
         self.active_solo_char = CharacterType.IGNIS
         self.shockwave_flash = 0.0
 
+    def _reset_character(self, character, spawn_pos):
+        """Mengembalikan posisi dan status aksi karakter ke kondisi awal."""
+        character.physics.rect.x, character.physics.rect.y = spawn_pos
+        character.physics.vx, character.physics.vy = 0.0, 0.0
+        character.dash_timer = 0.0
+        character.dash_cooldown_timer = 0.0
+        character.is_acting = False
+        character.action_timer = 0.0
+        character.dash_ghosts.clear()
+
     def trigger_death(self, character, particles_color, reason_text):
         """Menangani eliminasi karakter dan respawn."""
         self.stats.record_death()
@@ -67,23 +77,21 @@ class Game:
             count=25
         )
 
-        if character.char_type == CharacterType.IGNIS:
-            character.physics.rect.x, character.physics.rect.y = self.level.spawn_ignis
-        else:
-            character.physics.rect.x, character.physics.rect.y = self.level.spawn_cryo
-
-        character.physics.vx, character.physics.vy = 0.0, 0.0
+        spawn_pos = (
+            self.level.spawn_ignis
+            if character.char_type == CharacterType.IGNIS
+            else self.level.spawn_cryo
+        )
+        self._reset_character(character, spawn_pos)
 
     def reset_level(self):
         """Mereset level 1 dan mengembalikan posisi pemain ke spawn."""
         self.level = Level1()
-        self.ignis.physics.rect.x, self.ignis.physics.rect.y = self.level.spawn_ignis
-        self.ignis.physics.vx, self.ignis.physics.vy = 0.0, 0.0
-
-        self.cryo.physics.rect.x, self.cryo.physics.rect.y = self.level.spawn_cryo
-        self.cryo.physics.vx, self.cryo.physics.vy = 0.0, 0.0
-
-        self.stats.elapsed_time = 0.0
+        self._reset_character(self.ignis, self.level.spawn_ignis)
+        self._reset_character(self.cryo, self.level.spawn_cryo)
+        self.particle_manager.clear()
+        self.shockwave_flash = 0.0
+        self.stats.reset()
 
     def update(self, dt, ignis_cmd, cryo_cmd):
         """Memperbarui fisika, level, interaksi bahaya, dan kamera."""
